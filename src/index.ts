@@ -26,7 +26,7 @@ app.get("/ping", (req, res) => {
 })
 
 // hash de senhas reais de forma segura!
-const hashManager = new HashManager()
-hashManager.hash("SenhaReal").then((res) => {
-    console.log(res)
-})
+//const hashManager = new HashManager()
+//hashManager.hash("SenhaReal").then((res) => {
+//    console.log(res)
+//})
