@@ -1,5 +1,6 @@
 import { BadRequestError } from "../errors/BadRequestError"
-import { Post, PostModel } from "../models/Post"
+import { Post } from "../models/Post"
+import { PostModel } from "../types"
 
 // getPost
 export interface GetPostInputDTO {
