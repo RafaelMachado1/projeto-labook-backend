@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import { HashManager } from './services/HashManager'
 
 dotenv.config()
 
@@ -15,4 +16,12 @@ app.listen(Number(process.env.PORT) || 3003, () => {
 
 app.get("/ping", (req, res) => {
     res.send("Pong!")
+})
+
+
+
+// hash de senhas reais de forma segura!
+const hashManager = new HashManager()
+hashManager.hash("SenhaReal").then((res) => {
+    console.log(res)
 })
