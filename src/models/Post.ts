@@ -1,26 +1,4 @@
-export interface PostsDB { //tipagem para o banco de dados
-    id: string,
-    creator_id: string,
-    content: string,
-    likes: number,
-    dislikes: number,
-    created_at: string,
-    updated_at: string
-}
-
-export interface PostModel { //tipagem para o frontend
-    id: string,
-    content: string,
-    likes: number,
-    dislikes: number,
-    createdAt: string,
-    updatedAt: string,
-    creator: {
-        id: string,
-        name: string
-    }
-}
-
+import { PostModel, PostsDB } from "../types"
 
 export class Post {
     constructor(

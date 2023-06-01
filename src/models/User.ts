@@ -1,32 +1,4 @@
-export enum USER_ROLE {
-    ADMIN = "administrador",
-    USER = "usuário"
-}
-
-export interface TokenPayload {
-    id: string,
-    name: string,
-    role: USER_ROLE
-} 
-
-export interface UserDB { //tipagem para o banco de dados
-    id: string,
-    name: string,
-    email: string,
-    password: string,
-    role: USER_ROLE,
-    created_at: string
-}
-
-export interface UserModel { //tipagem para o frontend
-    id: string,
-    name: string,
-    email: string,
-    password: string,
-    role: USER_ROLE,
-    createdAt: string
-}
-
+import { USER_ROLE } from "../types";
 
 export class User {
     constructor(
@@ -85,27 +57,5 @@ export class User {
     public setCreatedAt (value : string): void {
         this.createdAt = value
     }  
-
-    public toDBModel(): UserDB {
-        return {
-          id: this.id,
-          name: this.name,
-          email: this.email,
-          password: this.password,
-          role: this.role,
-          created_at: this.createdAt
-        }
-      }
-    
-      public toBusinessModel(): UserModel {
-        return {
-          id: this.id,
-          name: this.name,
-          email: this.email,
-          password: this.password,
-          role: this.role,
-          createdAt: this.createdAt
-        }
-      }
     
 }
